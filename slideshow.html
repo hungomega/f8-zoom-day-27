@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>slideShow</title>
+    </head>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css"
+        integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    <style>
+        .wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+        .slideshow {
+            display: flex;
+            transition: all ease 0.5s;
+            /* translate: -100%; */
+        }
+        .slide-img {
+            width: 100%;
+            height: 550px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+        .control {
+            position: absolute;
+            transform: translateY(-50%);
+            top: 50%;
+            left: 1px;
+            right: 1px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn {
+            padding: 10px;
+        }
+
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+        }
+
+        .dot.active {
+            background: #000;
+        }
+    </style>
+    <body>
+        <div class="wrapper">
+            <div class="slideshow">
+                <img class="slide-img" src="./img/img1.avif" alt="" />
+                <img class="slide-img" src="./img/img2.avif" alt="" />
+                <img class="slide-img" src="./img/img3.avif" alt="" />
+                <img class="slide-img" src="./img/img4.avif" alt="" />
+                <img class="slide-img" src="./img/img5.avif" alt="" />
+                <img class="slide-img" src="./img/img6.avif" alt="" />
+            </div>
+            <div class="pagination"></div>
+            <div class="control">
+                <button class="btn btn-pre">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <button class="btn btn-next">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+        <script src="./js/slideshow.js"></script>
+    </body>
+</html>
